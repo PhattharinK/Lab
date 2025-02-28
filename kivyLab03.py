@@ -5,6 +5,7 @@ from kivy.uix.label import Label
 from kivy.uix.floatlayout import FloatLayout
 from kivy.uix.textinput import TextInput
 from kivy.uix.boxlayout import BoxLayout
+
 class TutorialApp(App):
     def build(self):
         b = BoxLayout(orientation='vertical')
@@ -15,8 +16,10 @@ class TutorialApp(App):
         s = Scatter(pos=(90, size[1]/2 - 200))
         f.add_widget(s)
         s.add_widget(l)
+
         b.add_widget(t)
         b.add_widget(f)
+
         t.bind(text=l.setter('text'))
         return b
 if __name__ == "__main__":
